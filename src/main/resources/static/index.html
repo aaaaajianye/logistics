@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="orders by dede58.com"/>
+    <title>CMS物流管理系统</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- start header -->
+        <header>
+            <div class="top center">
+                <div class="left fl">
+                    <ul>
+                        <li><a href="#" target="_blank">CMS物流管理系统 - 订单提交页面</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="right fr"></div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!--end header -->
+
+        <br>
+        <br>
+        <center>
+            <h2>CMS物流管理系统 - 下单系统</h2>
+        </center>
+        <br>
+
+        <!-- start banner_x -->
+        <div class="banner_x center">
+            <div class="nav fl">
+
+                <label for="startPoint">这里输入您的寄货起点:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.startPoint" id="startPoint" name="startPoint">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="endPoint">这里输入您的寄货终点:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.endPoint" id="endPoint" name="endPoint">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="consignor">寄件人姓名:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.consignor" id="consignor" name="consignor">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="consignorPhone">寄件人电话:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.consignorPhone" id="consignorPhone" name="consignorPhone">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="addressee">收货人姓名:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.addressee" id="addressee" name="addressee">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="addresseePhone">收货人电话:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.addresseePhone" id="addresseePhone" name="addresseePhone">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="notes">寄件备注信息:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.notes" id="notes" name="notes">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="weight">货物总重量:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" v-model="orders.weight" id="weight" name="weight">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="idCardOne">身份证正面照:</label>
+                <div class="input-group mb-3">
+                    <input @change="uploadCardOne($event)" v-model="idCardOne" type="file" class="form-control" id="idCardOne" name="upload">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+                <label for="idCardTwo">身份证反面照:</label>
+                <div class="input-group mb-3">
+                    <input @change="uploadCardTwo($event)" v-model="idCardTwo" type="file" class="form-control" id="idCardTwo" name="upload">
+                    <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="search fr">
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- end banner_x -->
+
+        <center>
+            <button @click="submitOrder" type="button" class="btn btn-primary">提交订单</button>
+        </center>
+
+    </div>
+
+<script src="js/vuejs-2.5.16.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>

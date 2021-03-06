@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="orders by dede58.com"/>
+    <title>CMS物流管理系统</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- start header -->
+    <header>
+        <div class="top center">
+            <div class="left fl">
+                <ul>
+                    <li><a href="#" target="_blank">CMS物流管理系统 - 订单提交页面</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="right fr"></div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <!--end header -->
+
+    <br>
+    <br>
+    <center>
+        <h2>CMS物流管理系统 - 订单查询页面</h2>
+    </center>
+    <br>
+    <br>
+
+    <div class="input-group mb-3">
+        <input placeholder="请输入您的订单号:" width="200px" type="text" class="form-control" v-model="orders.orderId" id="orderId" name="orderId">
+        <div class="input-group-append">
+            <span class="input-group-text">@cms.com</span>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!--<center>-->
+
+    <!--&lt;!&ndash; start banner_x &ndash;&gt;-->
+    <!--<div class="banner_x center">-->
+    <!--        <div class="nav fl">-->
+
+    <!--        </div>-->
+    <!--    <div class="search fr">-->
+    <!--        <div class="clear"></div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!--</center>-->
+
+    <!-- end banner_x -->
+
+    <center>
+        <button style="width: 130px" @click="search(orders.orderId)" type="button" class="btn btn-primary">搜索</button>
+    </center>
+
+</div>
+
+<script src="js/vuejs-2.5.16.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
